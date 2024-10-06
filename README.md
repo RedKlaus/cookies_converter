@@ -1,6 +1,10 @@
 # CookiesConverter
 
----
+## Install
+
+```
+pip install git+https://github.com/RedKlaus/cookies_converter.git
+```
 
 ## Example usage
 
