@@ -8,7 +8,7 @@ def readme():
 
 setup(
     name='cookies_converter',
-    version='0.3.0',
+    version='0.3.1',
     author='REDKLAUS',
     author_email='reallifestd@gmail.com',
     long_description=readme(),

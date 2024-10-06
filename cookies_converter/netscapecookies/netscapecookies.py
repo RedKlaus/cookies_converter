@@ -13,7 +13,7 @@ class NetscapeCookies(List[str]):
     def from_file_content(self, file: str) -> "NetscapeCookies":
         with open(file, "r", encoding="utf-8", errors="ignore") as opened_file:
             for netscape_cookie in opened_file:
-                netscape_cookie = netscape_cookie.strip()
+                netscape_cookie = netscape_cookie
                 re_match: Match[str] = match(
                     r'^([ -~]*)\t(TRUE|FALSE)\t(/[ -~]*)\t(TRUE|FALSE)\t([-0-9]*)\t([ -~]*)\t(.*|)$',
                     netscape_cookie)
