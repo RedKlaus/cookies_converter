@@ -11,10 +11,9 @@ setup(
     version='0.1.0',
     author='REDKLAUS',
     author_email='reallifestd@gmail.com',
-    description='Interaction with Digiseller API via Python',
     long_description=readme(),
     long_description_content_type='text/markdown',
-    url='',
+    url='https://github.com/RedKlaus/cookies_converter',
     packages=find_packages(),
     install_requires=['pydantic~=2.8.2'],
     classifiers=[
