@@ -1,10 +1,3 @@
-# CookiesConverter
-
----
-
-## Example usage
-
-```python
 from datetime import datetime
 
 from cookies_converter import JsonCookies, KeyValueCookies, NetscapeCookies
@@ -38,5 +31,3 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-
-```
