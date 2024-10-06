@@ -1,6 +1,7 @@
 from typing import Dict, Any
 
 from ..jsoncookies import JsonCookies
+from ..netscapecookies import NetscapeCookies
 
 
 class KeyValueCookies(Dict[str, Any]):
@@ -16,6 +17,10 @@ class KeyValueCookies(Dict[str, Any]):
             if '.'.join(cookie.domain.split('.')[1:]) == domain:
                 self.__key_value_cookies[cookie.name] = cookie.value
         return self
+
+    def from_netscape(self, domain: str, netscape_cookies: NetscapeCookies) -> "KeyValueCookies":
+        json_cookies = JsonCookies().from_netscape(netscape_cookies)
+        return self.from_json(domain, json_cookies)
 
     def __str__(self) -> str:
         return str(self.__key_value_cookies)

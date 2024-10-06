@@ -1,20 +1,17 @@
 from datetime import datetime
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 from pydantic import BaseModel
 
 
 class JsonCookie(BaseModel):
-    def __int__(self):
-        super().__int__()
-
     name: str
     value: str
     domain: str
     hostOnly: bool
     path: str
     httpOnly: bool
-    expires: datetime
+    expires: Optional[datetime]
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -24,5 +21,5 @@ class JsonCookie(BaseModel):
             'hostOnly': self.hostOnly,
             'path': self.path,
             'httpOnly': self.httpOnly,
-            'expires': int(self.expires.timestamp()),
+            'expires': int(self.expires.timestamp()) if self.expires is not None else self.expires,
         }

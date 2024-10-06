@@ -28,3 +28,6 @@ class NetscapeCookies(List[str]):
 
     def __str__(self) -> str:
         return str(self.__netscape_cookies)
+
+    def __getitem__(self, item: int) -> str:
+        return self.__netscape_cookies[item]

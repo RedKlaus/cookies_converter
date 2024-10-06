@@ -1,16 +1,3 @@
-# CookiesConverter
-
-## Install
-
-```
-pip install git+https://github.com/RedKlaus/cookies_converter.git
-```
-
-## Example usage
-
-```python
-
-
 from cookies_converter import JsonCookies, KeyValueCookies, NetscapeCookies
 
 
@@ -23,5 +10,3 @@ def main() -> None:
 
 if __name__ == '__main__':
     main()
-
-```
