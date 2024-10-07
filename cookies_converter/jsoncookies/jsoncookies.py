@@ -24,18 +24,18 @@ class JsonCookies(List[JsonCookie]):
         json_content: List[Dict[str, Any]] = json.loads(content_file)
         for json_cookie in json_content:
 
-            expires: Optional[datetime] = None
-            if json_cookie.get("expires") is not None:
-                expires: datetime = datetime.fromtimestamp(float(json_cookie["expires"]))
+            expiration_date: Optional[datetime] = None
+            if json_cookie.get("expirationDate") is not None:
+                expiration_date: datetime = datetime.fromtimestamp(float(json_cookie["expirationDate"]))
             elif json_cookie.get("expirationDate") is not None:
-                expires: datetime = datetime.fromtimestamp(float(json_cookie["expirationDate"]))
+                expiration_date: datetime = datetime.fromtimestamp(float(json_cookie["expirationDate"]))
 
             self.__json_cookies.append(JsonCookie(
                 domain=json_cookie["domain"],
                 hostOnly=bool(json_cookie["hostOnly"]),
                 path=json_cookie["path"],
                 httpOnly=bool(json_cookie["httpOnly"]),
-                expires=expires,
+                expirationDate=expiration_date,
                 name=json_cookie["name"],
                 value=json_cookie["value"],
             ))
@@ -61,7 +61,7 @@ class JsonCookies(List[JsonCookie]):
                 hostOnly=host_only,
                 path=re_match.group(3),
                 httpOnly=http_only,
-                expires=datetime.fromtimestamp(float(re_match.group(5))),
+                expirationDate=datetime.fromtimestamp(float(re_match.group(5))),
                 name=re_match.group(6),
                 value=re_match.group(7),
             ))
