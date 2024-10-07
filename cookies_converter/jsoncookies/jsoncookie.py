@@ -11,7 +11,7 @@ class JsonCookie(BaseModel):
     hostOnly: bool
     path: str
     httpOnly: bool
-    expires: Optional[datetime]
+    expirationDate: Optional[datetime]
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -21,5 +21,6 @@ class JsonCookie(BaseModel):
             'hostOnly': self.hostOnly,
             'path': self.path,
             'httpOnly': self.httpOnly,
-            'expires': int(self.expires.timestamp()) if self.expires is not None else self.expires,
+            'expirationDate': int(
+                self.expirationDate.timestamp()) if self.expirationDate is not None else self.expirationDate,
         }
