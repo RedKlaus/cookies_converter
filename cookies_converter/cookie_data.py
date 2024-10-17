@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional
 from pydantic import BaseModel
 
 
-class JsonCookie(BaseModel):
+class CookieData(BaseModel):
     name: str
     value: str
     domain: str
