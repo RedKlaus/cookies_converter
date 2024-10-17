@@ -5,10 +5,10 @@
 ## Install
 
 ```
-pip install git+https://github.com/RedKlaus/cookies_converter.git
+pip install cookies-converter
 ```
 
-## Example usage
+## Examples usage
 
 ### Formats
 

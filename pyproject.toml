@@ -1,0 +1,20 @@
+[project]
+name = "cookies_converter"
+version = "1.0.0"
+authors = [
+    { name = "REDKLAUS", email = "reallifestd@gmail.com" },
+]
+description = "Cookies converter"
+readme = "README.md"
+requires-python = "~=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pydantic>=2.8.2"
+]
+[project.urls]
+Homepage = "https://github.com/RedKlaus/cookies_converter"
+Issues = "https://github.com/RedKlaus/cookies_converter/issues"
