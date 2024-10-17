@@ -13,7 +13,7 @@ pip install cookies-converter
 ### Formats
 
 ```python
-from cookies_converter.cookies_converter import CookiesConverter
+from cookies_converter import CookiesConverter
 
 
 def read_file(file: str) -> str:
