@@ -18,7 +18,10 @@ class NetscapeCookies:
         for cookie in self.__cookies:
             host_only = str(cookie.hostOnly).upper()
             http_only = str(cookie.httpOnly).upper()
-            expiration_date = int(cookie.expirationDate.timestamp())
+            if cookie.expirationDate:
+                expiration_date = int(cookie.expirationDate.timestamp())
+            else:
+                expiration_date = 0
             lines.append(f"{cookie.domain}\t{host_only}\t{cookie.path}\t{http_only}"
                          f"\t{expiration_date}\t{cookie.name}\t{cookie.value}")
         return lines

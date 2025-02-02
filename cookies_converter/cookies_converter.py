@@ -40,9 +40,15 @@ class CookiesConverter(object):
             elif json_cookie.get("expirationDate") is not None:
                 expiration_date: datetime = datetime.fromtimestamp(float(json_cookie["expirationDate"]))
 
+            host_only = None
+            if json_cookie.get("secure"):
+                host_only = bool(json_cookie.get("secure"))
+            elif json_cookie.get("hostOnly"):
+                host_only = bool(json_cookie.get("hostOnly"))
+
             self.__add_cookie(CookieData(
                 domain=json_cookie["domain"],
-                hostOnly=bool(json_cookie["hostOnly"]),
+                hostOnly=host_only,
                 path=json_cookie["path"],
                 httpOnly=bool(json_cookie["httpOnly"]),
                 expirationDate=expiration_date,
